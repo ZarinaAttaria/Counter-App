@@ -5,9 +5,12 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
-const handleChange=()=>{
-  setCount(e.target.value)
+  const [inputValue, setInputValue] = useState(1)
+
+const handleChange=(e)=>{
+  setInputValue(Number(e.target.value))
 }
+
   return (
     <>
       
@@ -19,6 +22,17 @@ const handleChange=()=>{
         
         </button>
         <button onClick={() => setCount((count) => count - 1)}>
+ Decrement
+        </button>
+        <button onClick={() => setCount(0)}>
+Reset
+        </button>
+        <input type='text' value={inputValue} onChange={handleChange}/>
+
+        <button onClick={()=> setCount(count + inputValue)}>
+ Increment
+        </button>
+        <button onClick={()=> setCount(count - inputValue)}>
  Decrement
         </button>
         </div>
