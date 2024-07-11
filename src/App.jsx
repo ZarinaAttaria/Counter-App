@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
@@ -14,34 +12,43 @@ const handleChange=(e)=>{
   return (
     <>
       <h1>COUNTER APP</h1>
-      <div className='count'>Count: {count}</div>
+      <div className='count'>Your Count is: {count}</div>
 
       <div className="card">
 
+<div className='button-row'>
 
-        <button onClick={() => setCount((count) => count + 1)}>
-    Increment
+        <button type="button" class="btn btn-info incColor" onClick={() => setCount((count) => count + 1)}>
+    Increment (+1)
         
         </button>
-        <button onClick={() => setCount((count) => count - 1)}>
- Decrement
+        <button type="button" class="btn btn-info decColor" onClick={() => setCount((count) => count - 1)}>
+ Decrement (-1)
         </button>
-        <button onClick={() => setCount(0)}>
-Reset
-        </button>
-        <button onClick={() => setCount((count) => count + 3)}>
- Increment by 3
-        </button>
-        <button onClick={() => setCount((count) => count - 3)}>
- Decrement by 3
-        </button>
-        <input type='text' value={inputValue} onChange={handleChange}/>
+</div>
 
-        <button onClick={()=> setCount(count + inputValue)}>
- Increment
+        <div className='button-row'>
+        <button type="button" class="btn btn-info incColor" onClick={() => setCount((count) => count + 3)}>
+ Increment (+3)
         </button>
-        <button onClick={()=> setCount(count - inputValue)}>
+        <button type="button" class="btn btn-info decColor"  onClick={() => setCount((count) => count - 3)}>
+ Decrement (-3)
+        </button>
+        </div>
+       
+        <input  class="form-control me-2 inp"  aria-label="Search" type='text' value={inputValue} onChange={handleChange} placeholder='Enter number here'/>
+
+<div className='button-row'>
+
+        <button type="button" class="btn btn-info incColor" onClick={()=> setCount(count + inputValue)}>
+            Increment
+        </button>
+        <button type="button" class="btn btn-info decColor" onClick={()=> setCount(count - inputValue)}>
  Decrement
+        </button>
+</div>
+<button type="button" class="btn btn-danger resetBtn " onClick={() => setCount(0)}>
+Reset
         </button>
         </div>
     
