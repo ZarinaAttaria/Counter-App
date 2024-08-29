@@ -38,7 +38,9 @@ function App() {
   return (
     <>
       <h1>COUNTER APP</h1>
-      <div className="count">Your Count is: {count}</div>
+      <div className="count" data-testid="count">
+        Your Count is: {count}
+      </div>
 
       <div className="card">
         <div className="button-row">
